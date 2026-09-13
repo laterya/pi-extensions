@@ -1,0 +1,20 @@
+{
+  "name": "@laterya/pi-extensions",
+  "version": "0.1.0",
+  "description": "Custom extensions for the pi coding agent: real-time TPS footer (TTFT + tok/s)",
+  "type": "module",
+  "license": "MIT",
+  "keywords": ["pi-package"],
+  "files": ["extensions", "LICENSE", "README.md"],
+  "pi": {
+    "extensions": ["./extensions"]
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-ai": "*",
+    "@earendil-works/pi-coding-agent": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laterya/pi-extensions.git"
+  }
+}
