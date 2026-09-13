@@ -9,10 +9,6 @@
   "pi": {
     "extensions": ["./extensions"]
   },
-  "peerDependencies": {
-    "@earendil-works/pi-ai": "*",
-    "@earendil-works/pi-coding-agent": "*"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/laterya/pi-extensions.git"
