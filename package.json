@@ -4,13 +4,30 @@
   "description": "Custom extensions for the pi coding agent: real-time TPS footer (TTFT + tok/s)",
   "type": "module",
   "license": "MIT",
-  "keywords": ["pi-package"],
-  "files": ["extensions", "LICENSE", "README.md"],
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "pi-package"
+  ],
+  "files": [
+    "extensions",
+    "LICENSE",
+    "README.md"
+  ],
   "pi": {
-    "extensions": ["./extensions"]
+    "extensions": [
+      "./extensions"
+    ]
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/laterya/pi-extensions.git"
+  },
+  "devDependencies": {
+    "@earendil-works/pi-ai": "^0.74.2",
+    "@earendil-works/pi-coding-agent": "^0.74.2",
+    "@types/node": "^26.5.1",
+    "typescript": "^7.0.2"
   }
 }
