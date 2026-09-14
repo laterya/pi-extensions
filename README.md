@@ -39,6 +39,15 @@ Live token count is an estimate (delta events ≈ tokens) until `message_end` de
 
 Drop `extensions/name.ts` and add a row/section above.
 
+## Development
+
+```bash
+npm install        # dev deps: TypeScript + pi type packages (not installed by consumers)
+npm run typecheck  # strict typecheck of extensions/
+```
+
+CI runs the typecheck on every push and PR.
+
 ## License
 
 MIT
