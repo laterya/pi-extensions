@@ -5,6 +5,7 @@ My custom [pi coding agent](https://github.com/earendil-works/pi) extensions, pa
 | Extension | What it does |
 |---|---|
 | [tps](extensions/tps.ts) | Real-time tok/s + TTFT in the footer during generation, run stats on finish |
+| [stats-export](extensions/stats-export.ts) | Append per-run usage + cost as JSONL to `<agentDir>/stats.jsonl` (`PI_STATS_FILE` overrides) |
 
 ## Install
 
@@ -34,6 +35,15 @@ Reload pi — no config needed. (Until published to npm; then `pi install npm:@l
 | `agent_start` / `agent_end` | run-level aggregate + notify |
 
 Live token count is an estimate (delta events ≈ tokens) until `message_end` delivers exact usage.
+
+## stats-export
+
+On `agent_end`, appends one JSON line to `<agentDir>/stats.jsonl` (pi's config dir, e.g. `~/.pi/agent/`; set `PI_STATS_FILE` to override). Per run: timestamp, cwd, model/provider, LLM call count (+ error count), input/output/cache tokens, USD cost (as computed by pi-ai), LLM streaming time and wall time. Works headless (print/RPC mode), no UI required.
+
+```bash
+tail -5 ~/.pi/agent/stats.jsonl | jq               # recent runs
+jq -s '[.[].cost] | add' ~/.pi/agent/stats.jsonl   # total spend
+```
 
 ## Add a new extension
 
